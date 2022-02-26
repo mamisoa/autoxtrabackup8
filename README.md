@@ -3,12 +3,11 @@
 Autoxtrabackup script for Percona 8
 
 ## Use
-1. Copy default autoextrabackup file to /etc/default directory
+1. Copy default `autoextrabackup` file to /etc/default directory
 2. Edit file to adjust parameters
-3. Copy autoxtrabackup8.sh to /usr/local/bin directory
+3. Copy `autoxtrabackup8.sh` to /usr/local/bin directory
 4. Make the script executable
-
-Add to cron jobs
+5. Add to cron jobs
 
 ## Restore
 
