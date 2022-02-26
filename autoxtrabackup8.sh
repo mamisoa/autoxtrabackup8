@@ -142,6 +142,8 @@ while getopts ":hv" opt; do
   esac
 done
 
+# check for default config
+
 if [ -f /etc/default/autoxtrabackup ] ; then
         . /etc/default/autoxtrabackup
 else

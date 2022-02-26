@@ -1,0 +1,18 @@
+# copy this file to /etc/default 
+backupDir=/percona/backup
+mounttype=hard
+nfsmountpoint=/percona/backup
+incrtype=full
+tmpDir=/tmp
+mysqlUser=root
+mysqlPwd=default
+hoursBeforeFull=48
+hoursBeforeInc=1
+compression=true
+compressThreads=1
+keepDays=7
+keepWeeks=39
+keepMonths=9
+sendEmail=never
+emailAddress=
+backupLog=/var/log/autoxtrabackup.log
