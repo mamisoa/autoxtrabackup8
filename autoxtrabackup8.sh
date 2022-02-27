@@ -61,8 +61,8 @@ hoursBeforeInc=20
 # Username to access the MySQL server. On CentOS with mysql packaged installs,
 # you can use the your .my.cnf file in your home directory. On other distributions,
 # fill in your MySQL credentials
-mysqlUser=\`grep user ~/.my.cnf | head -n 1 | cut -d\"=\" -f2 | awk '{print $1}'\`
-mysqlPwd=\`grep password ~/.my.cnf | head -n 1 | cut -d\"\\\"\" -f2 | awk '{print $1}'\`
+mysqlUser=`grep user ~/.my.cnf | head -n 1 | cut -d "=" -f2 | awk '{print $1}'`
+mysqlPwd=`grep password ~/.my.cnf | head -n 1 | cut -d "=" -f2 | awk '{print $1}'`
 
 # Compress the backup or not. Set compress to true/false. Compression is enabled by default
 compression=true
@@ -196,8 +196,8 @@ delDay=`date -d "-$keepDays days" +%Y-%m-%d`
 delWeek=`date -d "-$keepWeeks weeks" +%Y-%m-%d`
 delMonth=`date -d "-$keepMonths months" +%Y-%m-%d`
 tomorrow=$(TZ=`date | awk '{print $5}'`-24 date +%d)
-weekTomorrow=$((`date -d $dateTomorrow +%V`))
-weekNext=$((`date +%V`+1))
+weekTomorrow=$((`date -d $dateTomorrow +%-V`))
+weekNext=$((`date +%-V`+1))
 
 # Check if last day of month
 if [ $tomorrow -eq 1 ]; then
