@@ -274,9 +274,9 @@ else
                 lastFullDir=`date -d@"$lastFull" '+%Y-%m-%d_%H-%M-%S'`
                 lastIncrDir=`date -d@"$lastInc" '+%Y-%m-%d_%H-%M-%S'`
 		if [[ $incrtype == full ]]; then
-			/usr/bin/xtrabackup --backup --user=$mysqlUser --password=$mysqlPwd $compress $compressThreads --history --slave-info --incremental --incremental-basedir="$dailyDir"/"$lastFullDir"_full "$dailyDir"/"$dateNow"_incr > $backupLog 2>&1
+			/usr/bin/xtrabackup --backup $compress $compressThreads --history --slave-info --incremental --incremental-basedir="$dailyDir"/"$lastFullDir"_full "$dailyDir"/"$dateNow"_incr > $backupLog 2>&1
 		else
-			/usr/bin/xtrabackup --backup --user=$mysqlUser --password=$mysqlPwd $compress $compressThreads --history --slave-info --incremental --incremental-basedir="$dailyDir"/"$lastIncrDir"_incr "$dailyDir"/"$dateNow"_incr > $backupLog 2>&1
+			/usr/bin/xtrabackup --backup $compress $compressThreads --history --slave-info --incremental --incremental-basedir="$dailyDir"/"$lastIncrDir"_incr "$dailyDir"/"$dateNow"_incr > $backupLog 2>&1
 		fi
         echo $dateNowUnix > "$dailyDir"/latest_incremental
         echo "$dailyDir"/"$dateNow"_incr > "$dailyDir"/latest_incremental_dir
